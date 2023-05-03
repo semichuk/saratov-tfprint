@@ -871,7 +871,8 @@ a{outline:none !important;}
 .contacts{margin:0 0 40px;}
 #main .contacts h2{margin:0 0 46px;}
 .contacts-content{
-	display:table;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
 	box-sizing:border-box;
 	padding:0 30px;
 	width:100%;
@@ -1191,7 +1192,7 @@ a{outline:none !important;}
 	.slideshow .btn-prev, .slideshow .btn-next{display:none;}
 	.slideshow .gmask .slide{padding:0 10px;}
 	.contacts-content{
-		display:block;
+        display: block;
 		padding:0;
 	}
 	.map {
