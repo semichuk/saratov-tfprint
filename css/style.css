@@ -1,3 +1,7 @@
+.fancybox-margin {
+    margin-right: 17px;
+}
+
 @-webkit-keyframes p2d-preloader__dots {
     0% {
         transform: scale(0);
