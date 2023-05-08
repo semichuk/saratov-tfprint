@@ -15,14 +15,18 @@ header('Content-type: application/json');
 
 function tfprintMailer()
 {
+    $input = json_decode(file_get_contents("php://input"), true);
     // Переменные, которые отправляет пользователь
-    $email = 'kirillsemichuk@yandex.ru';
-    $text = 'Я люблю Маму';
+    $email = $input['email'];
+    $name = $input['name'];
+    $phone_number = $input['phone'];
+    $text = 'Здравствуйте, меня зовут '.$name.', я оставил(а) заявку на сайте http://saratov-tfprint.ru/';
 
     // Формирование самого письма
-    $title = "Тестовое письмо для tfprint";
+    $title = "Письмо от посетителя saratov-tfprint.ru";
     $body = "
             <b>Почта:</b> $email<br><br>
+            <b>Номер телефона:</b> +$phone_number<br><br>
             <b>Сообщение:</b><br>$text
             ";
 
@@ -38,15 +42,15 @@ function tfprintMailer()
         };
 
         // Настройки вашей почты
-        $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
-        $mail->Username   = ''; // Логин на почте
-        $mail->Password   = ''; // Пароль на почте
+        $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
+        $mail->Username   = 'tfprint-mailer'; // Логин на почте
+        $mail->Password   = 'dzfjboaghdagjdcu'; // Пароль на почте
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
-        $mail->setFrom('', 'tfprint mailer'); // Адрес самой почты и имя отправителя
+        $mail->setFrom('tfprint-mailer@yandex.ru', $name); // Адрес самой почты и имя отправителя
 
         // Получатель письма
-        $mail->addAddress('');
+        $mail->addAddress('kirillsemichuk@yandex.ru');
         // $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
 
 
@@ -57,17 +61,17 @@ function tfprintMailer()
 
         // Проверяем отравленность сообщения
         if ($mail->send()) {
-            $result = "success";
-            echo ('success');
+            $result = 'Успешно отправленно!';
+            $status_code = '200';
+            echo(json_encode(['result' => $result, 'status_code' => $status_code]));
         } else {
-            $result = "error";
-            $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
-            echo ($status);
+            $result = 'Сообщение не было отправлено. Ошибка сервера';
+            $status_code = '500';
+            echo(json_encode(['result' => $result, 'status_code' => $status_code]));
         }
     } catch (Exception $e) {
         $result = "error";
     }
-    // echo json_encode(["result" => $result, "status" => $status]);
 }
 
-echo(json_encode($_POST));
+tfprintMailer();

@@ -1,14 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+export default function phoneInput() {
     let phoneInputs = document.querySelectorAll('input[data-tel-input]');
-    
-    let onPhoneInput = function(event) {
+
+    let onPhoneInput = function (event) {
         let input = event.target;
         input.value = formattingNumber(input.value);
-        
+
     }
-    
+
     function formattingNumber(value) {
-        if(value === "") {
+        if (value === "") {
             return value;
         }
         let withoutCharacterNumber = value.replace(/\D/g, "");
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function creatingString(array) {
         let string = ""
         for (let i = 0; i < array.length; i++) {
-             string += array[i];
+            string += array[i];
         }
         return string;
     }
@@ -37,4 +37,4 @@ document.addEventListener("DOMContentLoaded", function() {
         let input = phoneInputs[index];
         input.addEventListener("input", onPhoneInput);
     }
-})
+}
