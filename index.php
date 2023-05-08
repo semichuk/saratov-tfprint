@@ -73,9 +73,7 @@
                                 </ul>
                             </div>
                             <div class="column">
-                                <form class="order"
-                                    action="http://xn--e1afbgb8bdcaj5h.xn--p1ai/templates/premierstudio/php/mail.php"
-                                    enctype="multipart/form-data" method="post" novalidate="novalidate">
+                                <form class="order" action="#">
                                     <strong>Оставьте заявку</strong>
                                     <span>и мы сделаем вам</span>
                                     <em>индивидуальное предложение</em>
@@ -105,7 +103,8 @@
                                 <img src="./asserts/img-1_350_200_5_100.jpg" alt="Самоклеящиеся этикетки">
                                 <div>
                                     <strong><b>Самоклеящиеся этикетки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/samoklejashiesja-etiketki/">Заказать</a>
+                                    <a class="lightbox"
+                                        href="https://www.tfprint.ru/doc/samoklejashiesja-etiketki/">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +144,8 @@
                                 <img src="./asserts/img-5_350_200_5_100.jpg" alt="Термотрансферные этикетки">
                                 <div>
                                     <strong><b>Термотрансферные этикетки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/termotransfernye-etiketki/">Заказать</a>
+                                    <a class="lightbox"
+                                        href="https://www.tfprint.ru/doc/termotransfernye-etiketki/">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,8 @@
                                 <img src="./asserts/img-6_350_200_5_100.jpg" alt="Синтетические этикетки">
                                 <div>
                                     <strong><b>Синтетические этикетки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/sinteticheskie-etiketki/">Заказать</a>
+                                    <a class="lightbox"
+                                        href="https://www.tfprint.ru/doc/sinteticheskie-etiketki/">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +166,8 @@
                                 <img src="./asserts/img-7_350_200_5_100.jpg" alt="Защитные этикетки">
                                 <div>
                                     <strong><b>Защитные этикетки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/zashhitnye-etiketki/">Заказать</a>
+                                    <a class="lightbox"
+                                        href="https://www.tfprint.ru/doc/zashhitnye-etiketki/">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -241,9 +243,7 @@
             <div class="container">
                 <div class="row">
                     <img src="./asserts/img-10.png" alt="image">
-                    <form class="form-1"
-                        action="http://xn--e1afbgb8bdcaj5h.xn--p1ai/templates/premierstudio/php/mail.php"
-                        enctype="multipart/form-data" method="post" novalidate="novalidate">
+                    <form class="form-1" action="#">
                         <strong>Оставьте заявку</strong>
                         <span><em>и мы сделаем вам</em> индивидуальное коммерческое предложение</span>
                         <div class="form-row">
@@ -255,7 +255,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <input type="tel" data-tel-input name="phone" id="phone" placeholder="Ваш номер телефона">
+                            <input type="tel" data-tel-input name="phone2" id="phone2" placeholder="Ваш номер телефона">
                         </div>
                         <!-- <div class="form-row">
                             <textarea name="text" id="text" cols="5" rows="5" placeholder="Сообщение"></textarea>
@@ -410,22 +410,24 @@
 
     <div class="popup-holder">
         <div id="popup1" class="lightbox">
-            <form class="order" action="http://xn--e1afbgb8bdcaj5h.xn--p1ai/templates/premierstudio/php/mail.php"
-                enctype="multipart/form-data" method="post" novalidate="novalidate">
+            <form class="order" action="#">
                 <strong>Оставьте заявку</strong>
                 <span>и мы сделаем вам</span>
                 <em>индивидуальное предложение</em>
                 <input type="text" name="name" id="name" placeholder="Ваше имя">
                 <input type="text" name="email" id="email" placeholder="Ваш е-mail">
-                <input type="text" name="phone" id="phone" placeholder="Ваш номер телефона">
+                <input type="tel" data-tel-input name="phone3" id="phone3" placeholder="Ваш номер телефона">
                 <input type="hidden" name="form" value="Первая форма">
                 <input type="submit" value="ОТПРАВИТЬ" class="btn-order">
             </form>
         </div>
     </div>
+
+    <!-- ////////////////////////scripts//////////////////////// -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=bb8ebdfe-cc4b-40c2-bb55-e36a038f8483&lang=ru_RU"
         type="text/javascript"></script>
     <script src="./scripts/yandexMap.js" type="text/javascript"></script>
+    <script src="./scripts/forms.js" type="text/javascript"></script>
 
 
     <div class="_gis-font-loader"></div>
