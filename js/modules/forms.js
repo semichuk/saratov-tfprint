@@ -5,7 +5,7 @@ export default function forms() {
     const forms = document.querySelectorAll('form');
 
     const message = {
-        loading: 'отправка...',
+        loading: 'Отправка...',
     };
 
     forms.forEach(item => {
@@ -42,12 +42,13 @@ export default function forms() {
 
             const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-            postData('./api/main.php', json)
+            postData('http://saratov-tfprint.ru/api/main.php', json)
                 .then(res => {
                     console.log(res);
                     statusMessage.textContent = res.result;
-                }).catch(() => {
-                    alert('Извините, не удалось отправить заявку');
+                }).catch((exeption) => {
+                    console.log(exeption);
+                    statusMessage.textContent = 'Ошибка клиента';
                 }).finally(() => {
                     setTimeout(()=>{
                         let status = document.querySelectorAll('.status');
