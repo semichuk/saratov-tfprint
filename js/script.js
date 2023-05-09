@@ -1,6 +1,122 @@
-import forms from './modules/forms.js';
-import phoneInput from './modules/phoneInput.js';
-import yandexMap from './modules/yandexMap.js';
+function forms() {
+    ////////////////////forms/////////////////////////////////////////
+
+
+    const forms = document.querySelectorAll('form');
+
+    const message = {
+        loading: 'Отправка...',
+    };
+
+    forms.forEach(item => {
+        bindPostData(item);
+    });
+
+    const postData = async (url, data) => {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: data
+        });
+
+        return await response.json();
+    };
+
+
+    function bindPostData(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            const statusMessage = document.createElement('div');
+            statusMessage.classList.add('status');
+            statusMessage.textContent = 'отправка...';
+            form.append(statusMessage);
+
+            // const object = {};
+            // formData.forEach((value, key) => {
+            //     object[key] = value;
+            // });
+
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+            postData('http://saratov-tfprint.ru/api/main.php', json)
+                .then(res => {
+                    console.log(res);
+                    statusMessage.textContent = res.result;
+                }).catch((exeption) => {
+                    console.log(exeption);
+                    statusMessage.textContent = 'Ошибка клиента';
+                }).finally(() => {
+                    setTimeout(()=>{
+                        let status = document.querySelectorAll('.status');
+                        status.forEach((item) => {
+                            item.remove();
+                        });
+                    }, 8000);
+                })
+
+
+
+        });
+    }
+
+}
+
+function phoneInput() {
+    let phoneInputs = document.querySelectorAll('input[data-tel-input]');
+
+    let onPhoneInput = function (event) {
+        let input = event.target;
+        input.value = formattingNumber(input.value);
+
+    }
+
+    function formattingNumber(value) {
+        if (value === "") {
+            return value;
+        }
+        let withoutCharacterNumber = value.replace(/\D/g, "");
+        let a = withoutCharacterNumber.split("");
+        switch (a[0]) {
+            case "7":
+                return withoutCharacterNumber;
+                break;
+            default:
+                a[0] = "7";
+                return creatingString(a);
+                break;
+        }
+
+    }
+
+    function creatingString(array) {
+        let string = ""
+        for (let i = 0; i < array.length; i++) {
+            string += array[i];
+        }
+        return string;
+    }
+
+    for (let index = 0; index < phoneInputs.length; index++) {
+        let input = phoneInputs[index];
+        input.addEventListener("input", onPhoneInput);
+    }
+}
+
+function yandexMap() {
+    ymaps.ready(init);
+    function init() {
+        let myMap = new ymaps.Map("map", {
+            center: [51.596290, 46.018815],
+            zoom: 17
+        });
+        let myPlacemark = new ymaps.Placemark([51.596290, 46.018815]);
+        myMap.geoObjects.add(myPlacemark)
+    }
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     forms();
