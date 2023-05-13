@@ -84,7 +84,7 @@ a{outline:none !important;}
 	width:100%;
 }
 .flexbox{
-	padding:39px 0 45px;
+	padding:0px 0 45px;
 	background:url(/templates/premierstudio/images/bg-flexbox.jpg) no-repeat 50% 0;
 	background-size:cover;
 	width:100%;
@@ -112,12 +112,12 @@ a{outline:none !important;}
 	clear:both;
 	content:"";
 }
-.logo{
+/* .logo{
 	float:left;
 	margin:-20px 10px 0 -3px;
 	position:relative;
  	z-index:5;
-}
+} */
 .logo img{
 	display:block;
 	width:100%;
@@ -1048,7 +1048,7 @@ a{outline:none !important;}
 		box-sizing:border-box;
 		z-index:999;
 	}
-	.info{padding:0;}
+	/* .info{padding:0;}
 	.info-col{
 		float:none;
 		margin:0 0 20px;
@@ -1064,7 +1064,7 @@ a{outline:none !important;}
 	}
 	.info-col address:after, 
 	.info-col span:after, 
-	.info-col em:after{display:none;}
+	.info-col em:after{display:none;} */
 	.menu .drop{float:none;}
 	.wrap.push .drop{position:static;}
 	.wrap.push .menu{
