@@ -50,7 +50,7 @@ function tfprintMailer()
         $mail->setFrom('tfprint-mailer@yandex.ru', $name); // Адрес самой почты и имя отправителя
 
         // Получатель письма
-        $mail->addAddress('kirillsemichuk@yandex.ru');
+        $mail->addAddress('saratov@tfprint.ru');
         // $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
 
 
