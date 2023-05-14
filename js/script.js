@@ -118,8 +118,53 @@ function yandexMap() {
     }
 }
 
+function burgerMenu() {
+    const burger = document.querySelector('a[data-nav-burger]');
+    const menu = document.querySelector('div[data-nav-buttons]');
+    const button1 = document.querySelector('#button1');
+    const button2 = document.querySelector('#button2');
+    const button3 = document.querySelector('#button3');
+    const button4 = document.querySelector('#button4');
+
+    const scrollElement1 = document.querySelector('#scrollElement1');
+    const scrollElement2 = document.querySelector('#scrollElement2');
+    const scrollElement3 = document.querySelector('#scrollElement3');
+    const scrollElement4 = document.querySelector('#scrollElement4');
+
+    const arrayButtons = [button1, button2, button3, button4];
+    const arrayScrollElements = [scrollElement1, scrollElement2, scrollElement3, scrollElement4];
+
+    let onClickMButton = (button, element) => {
+        button.addEventListener('touchend', (event) => {
+            event.preventDefault();
+            element.scrollIntoView( {
+                'behavior': 'smooth',
+                'block': 'center'
+            });
+        })
+    }
+
+    for (let index = 0; index < arrayButtons.length; index++) {
+        onClickMButton(arrayButtons[index], arrayScrollElements[index]);
+    }
+
+    burger.addEventListener('touchend', (event) => {
+        event.preventDefault();
+        menu.classList.toggle('hide');
+    })
+
+    menu.addEventListener('touchend', (event) => {
+        const button = event.target;
+        if(button.classList.contains('nav__mobile-button')) {
+            menu.classList.add('hide');
+        }
+    })
+
+
+}
 window.addEventListener('DOMContentLoaded', () => {
     forms();
     phoneInput();
     yandexMap();
+    burgerMenu();
 });
