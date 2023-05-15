@@ -222,11 +222,12 @@ a{outline:none !important;}
 }
 .promo-content h1{
 	margin:0 0 26px;
+    padding: 50px;
 	font-size:37px;
 	line-height:38px;
 	font-weight:bold;
 	text-transform:uppercase;
-	color:#fff;
+	/* color:#fff; */
 }
 .nav-bar{
 	width:100%;
@@ -1187,7 +1188,7 @@ a{outline:none !important;}
 		line-height:24px;
 		margin:0 0 30px;
 	}
-	.block img{display:none;}
+	/* .block img{display:none;} */
 	.form-1{padding:0 15px;}
 	.slideshow .btn-prev, .slideshow .btn-next{display:none;}
 	.slideshow .gmask .slide{padding:0 10px;}
