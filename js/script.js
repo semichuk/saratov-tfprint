@@ -2,15 +2,15 @@ function forms() {
     ////////////////////forms/////////////////////////////////////////
 
 
-    const forms = document.querySelectorAll('form');
+    const form1 = document.querySelector('#form1');
+    const form2 = document.querySelector('#form2');
 
     const message = {
         loading: 'Отправка...',
     };
 
-    forms.forEach(item => {
-        bindPostData(item);
-    });
+    bindPostData(form1);
+    bindPostData2(form2);
 
     const postData = async (url, data) => {
         const response = await fetch(url, {
@@ -43,6 +43,44 @@ function forms() {
             const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
             postData('https://saratov-tfprint.ru/api/main.php', json)
+                .then(res => {
+                    console.log(res);
+                    statusMessage.textContent = res.result;
+                }).catch((exeption) => {
+                    console.log(exeption);
+                    statusMessage.textContent = 'Ошибка клиента';
+                }).finally(() => {
+                    setTimeout(()=>{
+                        let status = document.querySelectorAll('.status');
+                        status.forEach((item) => {
+                            item.remove();
+                        });
+                    }, 8000);
+                })
+
+
+
+        });
+    }
+
+    function bindPostData2(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            const statusMessage = document.createElement('div');
+            statusMessage.classList.add('status');
+            statusMessage.textContent = 'отправка...';
+            form.append(statusMessage);
+
+            // const object = {};
+            // formData.forEach((value, key) => {
+            //     object[key] = value;
+            // });
+
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+            postData('https://saratov-tfprint.ru/api/main2.php', json)
                 .then(res => {
                     console.log(res);
                     statusMessage.textContent = res.result;
@@ -162,9 +200,26 @@ function burgerMenu() {
 
 
 }
+
+
+function orderScroll() {
+    const arrayButtons = document.querySelectorAll('a[data-order]');
+    const form = document.querySelector('#form2');
+
+    arrayButtons.forEach(element => {
+        element.addEventListener('click', (event) => {
+            event.preventDefault();
+            form.scrollIntoView( {
+                'behavior': 'smooth',
+                'block': 'center'
+            });
+        })
+    });
+}
 window.addEventListener('DOMContentLoaded', () => {
     forms();
     phoneInput();
     yandexMap();
     burgerMenu();
+    orderScroll();
 });

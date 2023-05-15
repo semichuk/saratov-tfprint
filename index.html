@@ -130,14 +130,13 @@
 
                             </div>
                             <div class="column">
-                                <form class="order" action="#">
+                                <form id="form1" class="order" action="#">
                                     <strong>Оставьте заявку</strong>
                                     <span>и мы сделаем вам</span>
                                     <em>индивидуальное предложение</em>
                                     <input type="text" name="name" id="name" placeholder="Ваше имя">
                                     <input type="text" name="email" id="email" placeholder="Ваш е-mail">
-                                    <input type="tel" data-tel-input name="phone" id="phone"
-                                        placeholder="Ваш номер телефона">
+                                    <input type="tel" data-tel-input name="phone" id="phone"placeholder="Ваш номер телефона">
                                     <input type="submit" value="ОТПРАВИТЬ" class="btn-order">
                                 </form>
                             </div>
@@ -172,8 +171,7 @@
                                 <img src="./asserts/img-1_350_200_5_100.jpg" alt="Самоклеящиеся этикетки">
                                 <div>
                                     <strong><b>Самоклеящиеся этикетки</b></strong>
-                                    <a class="lightbox"
-                                        href="https://www.tfprint.ru/doc/samoklejashiesja-etiketki/">Заказать</a>
+                                    <a data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +181,7 @@
                                 <img src="./asserts/img-2_350_200_5_100.jpg" alt="Термоэтикетки">
                                 <div>
                                     <strong><b>Термоэтикетки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/termoetiketki/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +191,7 @@
                                 <img src="./asserts/img-3_350_200_5_100.jpg" alt="Весовые  ленты">
                                 <div>
                                     <strong><b>Весовые ленты</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/vesovye-lenty/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +201,7 @@
                                 <img src="./asserts/img-4_350_200_5_100.jpg" alt="Термочеки">
                                 <div>
                                     <strong><b>Термочеки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/termocheki/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -213,8 +211,7 @@
                                 <img src="./asserts/img-5_350_200_5_100.jpg" alt="Термотрансферные этикетки">
                                 <div>
                                     <strong><b>Термотрансферные этикетки</b></strong>
-                                    <a class="lightbox"
-                                        href="https://www.tfprint.ru/doc/termotransfernye-etiketki/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -224,8 +221,7 @@
                                 <img src="./asserts/img-6_350_200_5_100.jpg" alt="Синтетические этикетки">
                                 <div>
                                     <strong><b>Синтетические этикетки</b></strong>
-                                    <a class="lightbox"
-                                        href="https://www.tfprint.ru/doc/sinteticheskie-etiketki/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -235,8 +231,7 @@
                                 <img src="./asserts/img-7_350_200_5_100.jpg" alt="Защитные этикетки">
                                 <div>
                                     <strong><b>Защитные этикетки</b></strong>
-                                    <a class="lightbox"
-                                        href="https://www.tfprint.ru/doc/zashhitnye-etiketki/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +241,7 @@
                                 <img src="./asserts/img-8_350_200_5_100.jpg" alt="Бирки  и ярлыки">
                                 <div>
                                     <strong><b>Бирки и ярлыки</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/birki-i-jarlyki/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +251,7 @@
                                 <img src="./asserts/img-9_350_200_5_100.jpg" alt="Риббоны (Термотр. ленты)">
                                 <div>
                                     <strong><b>Риббоны (Термотр. ленты)</b></strong>
-                                    <a class="lightbox" href="https://www.tfprint.ru/doc/ribbony/">Заказать</a>
+                                    <a  data-order class="lightbox" href="#">Заказать</a>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +307,7 @@
             <div class="container">
                 <div class="row">
                     <img src="./asserts/img-10.png" alt="image">
-                    <form class="form-1" action="#">
+                    <form  id="form2" class="form-1" action="#">
                         <strong>Оставьте заявку</strong>
                         <span><em>и мы сделаем вам</em> индивидуальное коммерческое предложение</span>
                         <div class="form-row">
@@ -324,11 +319,20 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <input type="tel" data-tel-input name="phone" id="phone" placeholder="Ваш номер телефона">
+                            <div class="form-box">
+                                <input type="tel" data-tel-input name="phone" id="phone" placeholder="Ваш номер телефона">
+                            </div>
+                            <div class="form-box">
+                                <input type="text" name="productName" id="productName" placeholder="Наименование">
+                            </div>
                         </div>
-                        <!-- <div class="form-row">
-                            <textarea name="text" id="text" cols="5" rows="5" placeholder="Сообщение"></textarea>
-                        </div> -->
+                        <div class="form-row">
+                            <div class="form-box">
+                                <input type="text" name="amount" id="amount" placeholder="Количество товара">
+                            </div>
+                            <div class="form-box">
+                                <input type="text" name="size" id="size" placeholder="Размер">
+                            </div>
                         <input type="submit" value="ОТПРАВИТЬ" class="btn-form-1">
                     </form>
                 </div>
