@@ -42,7 +42,7 @@ function forms() {
 
             const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-            postData('http://saratov-tfprint.ru/api/main.php', json)
+            postData('../api/main.php', json)
                 .then(res => {
                     console.log(res);
                     statusMessage.textContent = res.result;

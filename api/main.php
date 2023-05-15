@@ -51,6 +51,7 @@ function tfprintMailer()
 
         // Получатель письма
         $mail->addAddress('saratov@tfprint.ru');
+        // $mail->addAddress('kirillsemichuk@yandex.ru');
         // $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
 
 
