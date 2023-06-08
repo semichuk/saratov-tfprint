@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 header('Content-type: application/json');
 
 
-function tfprintMailer()
+function tfprintMailer($host, $username, $password, $add_address)
 {
     $input = json_decode(file_get_contents("php://input"), true);
     // Переменные, которые отправляет пользователь
@@ -70,4 +70,4 @@ function tfprintMailer()
     }
 }
 
-tfprintMailer();
+tfprintMailer($host, $username, $password, $add_address);
