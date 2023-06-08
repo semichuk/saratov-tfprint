@@ -42,12 +42,12 @@ function tfprintMailer()
         };
 
         // Настройки вашей почты
-        $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
-        $mail->Username   = 'tfprint-mailer'; // Логин на почте
-        $mail->Password   = 'dzfjboaghdagjdcu'; // Пароль на почте
+        $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
+        $mail->Username   = 'saratov-tfprint.ru@mail.ru'; // Логин на почте
+        $mail->Password   = 'kGQtgnt2Zp04fhtrmjwe'; // Пароль на почте
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
-        $mail->setFrom('tfprint-mailer@yandex.ru', $name); // Адрес самой почты и имя отправителя
+        $mail->setFrom('saratov-tfprint.ru@mail.ru', $name); // Адрес самой почты и имя отправителя
 
         // Получатель письма
         $mail->addAddress('saratov@tfprint.ru');

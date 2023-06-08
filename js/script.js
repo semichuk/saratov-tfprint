@@ -29,12 +29,9 @@ function forms() {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-
-            const statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            statusMessage.textContent = 'отправка...';
-            form.append(statusMessage);
-
+            const status = document.querySelector('#grid-submit');
+            status.innerHTML = '';
+            status.classList.add('loader');
             // const object = {};
             // formData.forEach((value, key) => {
             //     object[key] = value;
@@ -45,18 +42,19 @@ function forms() {
             postData('https://saratov-tfprint.ru/api/main.php', json)
                 .then(res => {
                     console.log(res);
-                    statusMessage.textContent = res.result;
+                    status.classList.remove('loader');
+                    status.innerHTML = '<img src="./asserts/success.png">'
                 }).catch((exeption) => {
                     console.log(exeption);
-                    statusMessage.textContent = 'Ошибка клиента';
+                    status.classList.remove('loader');
+                    status.innerHTML = '<img src="./asserts/error.png">'
                 }).finally(() => {
-                    setTimeout(()=>{
-                        let status = document.querySelectorAll('.status');
-                        status.forEach((item) => {
-                            item.remove();
-                        });
+                    setTimeout(() => {
+                        status.classList.remove('loader');
+                        status.innerHTML = '';
                     }, 8000);
                 })
+
 
 
 
@@ -67,12 +65,9 @@ function forms() {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-
-            const statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            statusMessage.textContent = 'отправка...';
-            form.append(statusMessage);
-
+            const status = document.querySelector('#grid-submit2');
+            status.innerHTML = '';
+            status.classList.add('loader');
             // const object = {};
             // formData.forEach((value, key) => {
             //     object[key] = value;
@@ -83,18 +78,19 @@ function forms() {
             postData('https://saratov-tfprint.ru/api/main2.php', json)
                 .then(res => {
                     console.log(res);
-                    statusMessage.textContent = res.result;
+                    status.classList.remove('loader');
+                    status.innerHTML = '<img src="./asserts/success.png">'
                 }).catch((exeption) => {
                     console.log(exeption);
-                    statusMessage.textContent = 'Ошибка клиента';
+                    status.classList.remove('loader');
+                    status.innerHTML = '<img src="./asserts/error.png">'
                 }).finally(() => {
-                    setTimeout(()=>{
-                        let status = document.querySelectorAll('.status');
-                        status.forEach((item) => {
-                            item.remove();
-                        });
+                    setTimeout(() => {
+                        status.classList.remove('loader');
+                        status.innerHTML = '';
                     }, 8000);
                 })
+
 
 
 
@@ -175,7 +171,7 @@ function burgerMenu() {
     let onClickMButton = (button, element) => {
         button.addEventListener('touchend', (event) => {
             event.preventDefault();
-            element.scrollIntoView( {
+            element.scrollIntoView({
                 'behavior': 'smooth',
                 'block': 'center'
             });
@@ -193,7 +189,7 @@ function burgerMenu() {
 
     menu.addEventListener('touchend', (event) => {
         const button = event.target;
-        if(button.classList.contains('nav__mobile-button')) {
+        if (button.classList.contains('nav__mobile-button')) {
             menu.classList.add('hide');
         }
     })
@@ -209,7 +205,7 @@ function orderScroll() {
     arrayButtons.forEach(element => {
         element.addEventListener('click', (event) => {
             event.preventDefault();
-            form.scrollIntoView( {
+            form.scrollIntoView({
                 'behavior': 'smooth',
                 'block': 'center'
             });
