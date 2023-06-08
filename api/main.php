@@ -3,15 +3,12 @@
 require './php-mailer/PHPMailer.php';
 require './php-mailer/SMTP.php';
 require './php-mailer/Exception.php';
+require './config.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
 header('Content-type: application/json');
 
-// while(true) {
-//     sleep(5);
-//     echo('ki');
-// }
 
 function tfprintMailer()
 {
@@ -41,18 +38,16 @@ function tfprintMailer()
             $GLOBALS['status'][] = $str;
         };
 
-        // Настройки вашей почты
-        $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
-        $mail->Username   = 'saratov-tfprint.ru@mail.ru'; // Логин на почте
-        $mail->Password   = 'kGQtgnt2Zp04fhtrmjwe'; // Пароль на почте
+        $mail->Host       = $host; // SMTP сервера вашей почты
+        $mail->Username   = $username; // Логин на почте
+        $mail->Password   = $password; // Пароль на почте
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
-        $mail->setFrom('saratov-tfprint.ru@mail.ru', $name); // Адрес самой почты и имя отправителя
+        $mail->setFrom($host, $name); // Адрес самой почты и имя отправителя
 
         // Получатель письма
-        $mail->addAddress('saratov@tfprint.ru');
-        // $mail->addAddress('kirillsemichuk@yandex.ru');
-        // $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
+        $mail->addAddress($add_address);
+    
 
 
         // Отправка сообщения
