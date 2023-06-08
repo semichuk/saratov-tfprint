@@ -7,4 +7,4 @@
 - сбор заявок
 
 ## Примеры работы
-![preview](https://github.com/semichuk/saratov-tfprin/raw/main/preview/4.png)
+![preview](https://github.com/semichuk/saratov-tfprin/raw/main/preview/1.png)
