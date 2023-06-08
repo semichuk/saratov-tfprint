@@ -1,8 +1,0 @@
-User-agent: *
-Disallow: /mgr/
-Disallow: /assets/components/
-Disallow: /core/
-Disallow: /connectors/
-Disallow: /index.php
-Disallow: *?
-Sitemap: https://saratov-tfprint.ru/sitemap.xml
